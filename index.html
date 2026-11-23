@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CheDataCheck MedRCM — GOÄ/BEMA Abrechnungsprüfung &amp; PKV-Erstattung (100 % lokal)</title>
+  <meta name="description" content="Prüfung auf fehlende § 5 GOÄ Faktor-Begründungen, Zielleistungs-Ausschlüsse &amp; Erstattungseinspruch ohne Patientendaten-Upload." />
+  <link rel="canonical" href="https://cheresonanz-design.github.io/chedatacheck-med-rcm/" />
+  <link rel="stylesheet" href="assets/styles.css" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "CheDataCheck MedRCM", "applicationCategory": "BusinessApplication", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "url": "https://cheresonanz-design.github.io/chedatacheck-med-rcm/"}</script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand-mark" href="index.html"><span>CheDataCheck MedRCM</span><span class="brand-badge">GOÄ · BEMA · PKV-EINPRUCH</span></a>
+      <nav class="nav-links" aria-label="Hauptnavigation"><a href="index.html" class="active">GOÄ / RCM Check</a>
+<a href="goae-bema-regelcheck/" class="">GOÄ Check</a>
+<a href="faktor-begruendung/" class="">Faktor &gt;2,3x</a>
+<a href="erstattungs-einspruch/" class="">PKV Einspruch</a>
+<a href="pro/" class="">Kit &amp; Rollout</a>
+<a href="legal/" class="">Impressum</a><a href="pro/" class="nav-cta">49 EUR Kit</a></nav>
+    </div>
+  </header>
+  
+  <section class="hero"><div class="container"><h1>GOÄ/BEMA Vorprüfung &amp; PKV-Begründungs-Engine (100 % lokal)</h1><p>Verhindern Sie Honorar-Kürzungen bei Faktoren &gt;2,3x (§ 5 Abs. 2 GOÄ) und generieren Sie prüfsichere Begründungen rein lokal im Praxisbrowser.</p></div></section>
+  <main class="container">
+    <div class="card">
+      <div class="btn-row" style="margin-top:0;margin-bottom:14px;">
+        <button type="button" class="btn" id="sample1Btn">Demo: Orthopädie (Faktor 3,2x ohne Begründung)</button>
+        <button type="button" class="btn" id="sample2Btn">Demo: Clean Liquidation (Prüfsicher)</button>
+        <button type="button" class="btn" id="sample3Btn">Demo: Zahnarzt GOZ § 6 Abs. 1 Analog</button>
+      </div>
+      <div class="form-grid">
+        <div><label for="profileInput">Praxis / Fachrichtung</label><input type="text" id="profileInput" /></div>
+        <div><label for="modeSelect">Regelwerk</label><select id="modeSelect"><option value="goae">GOÄ Privatliquidation</option><option value="bema_goz">GOZ / Zahnmedizin Hybrid</option><option value="einspruch">PKV-Kürzung Einspruch</option></select></div>
+        <div><label for="toneSelect">Text-Fokus</label><select id="toneSelect"><option value="executive">Praxis-Begründung (§ 5 GOÄ)</option><option value="streng">Juristisch-präziser PKV-Widerspruch</option></select></div>
+      </div>
+      <div class="btn-row"><button type="button" class="btn btn-primary" id="runCheckBtn">Rechnungsentwurf prüfen</button></div>
+    </div>
+
+    <div id="resultCard" class="card hidden">
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;">
+        <h2 id="resultHeadline" style="margin:0;">Ergebnis</h2>
+        <div class="btn-row" style="margin:0;">
+          <button type="button" class="btn btn-primary" id="copyActionBtn">Maßnahmentext kopieren</button>
+          <button type="button" class="btn" id="dlCsvBtn">CSV Export (.csv)</button>
+          <button type="button" class="btn" id="dlJsonBtn">JSON Audit (.json)</button>
+        </div>
+      </div>
+      <div class="kpi-grid">
+        <div class="kpi-box"><div class="kpi-label">Abrechnungs-Score</div><div class="kpi-val" id="kpi1Val">-</div></div>
+        <div class="kpi-box"><div class="kpi-label">Kürzungsrisiken</div><div class="kpi-val" id="kpi2Val">-</div></div>
+        <div class="kpi-box"><div class="kpi-label">Gesichertes Honorar</div><div class="kpi-val" id="kpi3Val">-</div></div>
+        <div class="kpi-box"><div class="kpi-label">Hochrechnung p.a.</div><div class="kpi-val" id="kpi4Val">-</div></div>
+      </div>
+      <div class="table-wrap"><table><thead><tr><th>ID</th><th>Position &amp; Kategorie</th><th>Kennzahl</th><th>Effekt</th><th>Status</th><th>Prüfhinweis</th></tr></thead><tbody id="entriesBody"></tbody></table></div>
+      <h3>PKV-Begründungs- &amp; Einspruchstext</h3>
+      <textarea id="actionBox" readonly aria-label="Maßnahmentext"></textarea>
+    </div>
+
+    <div class="pricing-grid">
+      <div class="offer-card highlight"><div><span class="badge badge-pass">CDC-RCM-01 · 49 EUR</span><h3>CheDataCheck MedRCM GOÄ &amp; PKV-Einspruchs-Kit</h3><div class="offer-price">49 EUR</div><p class="muted">4-Tab GOÄ/GOZ Begründungs-Matrix (Excel), PKV-Widerspruchsguide PDF &amp; Offline CLI (ohne Patientendaten-Cloud).</p></div><div class="btn-row"><a href="https://payhip.com/b/uVaxJ" class="btn btn-primary">49 EUR Kit bestellen</a><a href="pro/" class="btn">Details</a></div></div>
+      <div class="offer-card"><div><span class="badge badge-warn">CDC-RCM-ROLLOUT · 2900 EUR</span><h3>CheDataCheck Praxis-RCM &amp; Honorarsicherungs-Rollout</h3><div class="offer-price">2900 EUR</div><p class="muted">Individuelle Textbaustein-Bibliothek für Ihre Top-30 GOÄ/GOZ-Leistungen inkl. PVS-Team-SOP.</p></div><div class="btn-row"><a href="https://buy.stripe.com/4gMeV67kl8s6bXOezD2400c" class="btn btn-dark">2900 EUR Rollout buchen</a><a href="pro/" class="btn">Umfang</a></div></div>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="container">
+      <p><strong>CheDataCheck MedRCM</strong> — Prüfung auf fehlende § 5 GOÄ Faktor-Begründungen, Zielleistungs-Ausschlüsse &amp; Erstattungseinspruch ohne Patientendaten-Upload.</p>
+      <p>Che Goncalves Menendez · CheDataCheck · by VeriTakt Collective (Gewerbe: ImportKlar) · Liegnitzstr. 53A, 28237 Bremen, Deutschland · Umsatzsteuerbefreit gemäß § 19 UStG (Kleinunternehmerregelung)</p>
+      <p><a href="legal/">Impressum &amp; DSGVO</a> · <a href="pro/">49 EUR Kit &amp; 2900 EUR Rollout</a> · <a href="https://cheresonanz-design.github.io/opskanon-directory/" target="_blank" rel="noopener">Gelistet auf OpsKanon</a></p>
+    </div>
+  </footer>
+  <script src="assets/med_rcm_engine.js"></script><script src="assets/app.js"></script>
+</body>
+</html>
