@@ -1,6 +1,0 @@
-# CheDataCheck MedRCM (by VeriTakt Collective)
-> Prüfung auf fehlende § 5 GOÄ Faktor-Begründungen, Zielleistungs-Ausschlüsse & Erstattungseinspruch ohne Patientendaten-Upload.
-
-- App: https://cheresonanz-design.github.io/chedatacheck-med-rcm/
-- Offers: https://cheresonanz-design.github.io/chedatacheck-med-rcm/pro/
-- Legal: https://cheresonanz-design.github.io/chedatacheck-med-rcm/legal/
